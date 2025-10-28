@@ -96,7 +96,7 @@ nav a:hover {
 
 #projeto h2 {
   text-align: center;
-  font-size: 2.2em;
+  font-size: 2.1em;
   margin-bottom: 30px;
 }
 .content {
@@ -111,8 +111,10 @@ nav a:hover {
   border-top: 3px dotted #ddd;
   padding-top: 50px;
 }
-#servico > h1 {
-  margin-top: 500px;
+#servicos h2{
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 30px;
 }
 .servicos-items {
   display: flex;
