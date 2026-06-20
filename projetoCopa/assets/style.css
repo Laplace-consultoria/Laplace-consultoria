@@ -1,0 +1,390 @@
+/* ==========================================================================
+   1. Variáveis e Reset Básicos
+   ========================================================================== */
+:root {
+  /* Cores Principais (Copa) */
+  --primary-color: #0b3d91; /* Azul institucional */
+  --secondary-color: #009c3b; /* Verde Brasil */
+  --accent-color: #ffdf00; /* Amarelo Brasil */
+  
+  /* Cores de Texto e Fundo */
+  --text-color: #333;
+  --bg-light: #f4f7f6;
+  
+  /* Cores da Laplace (Mantidas para referência) */
+  --verde-claro: #006d5d;
+  --verde-escuro: #00494b;
+  --ciano: #1fbbb1;
+  --ciano-claro: #90f1f1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. Cabeçalho (Header e Navegação)
+   ========================================================================== */
+header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 5px solid var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Task: Colocar a logo perto do título */
+.header-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* Espaço entre a logo e o texto */
+}
+
+/* Estilo para a imagem do logotipo da Laplace no header */
+.header-logo-img {
+  width: 80px; /* Tamanho ajustado para ficar harmônico com o título */
+  height: auto;
+}
+
+header h1 {
+  margin: 0;
+  font-family: "Bree serif", "serif";
+  font-weight: bold;
+  font-size: 2.8em;
+}
+
+/* Task: Aumentar a descrição debaixo do título */
+.header-description {
+  font-size: 1.4em; /* Aumentado conforme solicitado */
+  font-weight: 300;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 5px;
+  width: 100%;
+  max-width: 800px; /* Limitador para não espalhar demais em telas grandes */
+}
+
+nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 8px;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+#instagram { color: rgb(255, 94, 94); }
+#linkedin { color: rgb(87, 87, 252); }
+
+/* ==========================================================================
+   3. Conteúdo Principal (.container)
+   ========================================================================== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+section {
+  margin-bottom: 60px;
+  text-align: center; /* Centraliza conteúdo padrão das seções */
+}
+
+.section-title {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block; /* Para o underline funcionar centralizado */
+}
+
+.section-title::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent-color);
+  display: block;
+  margin: 10px auto 0;
+}
+
+/* Task: Diminuir o tamanho do coelho */
+.image-coelho {
+  max-width: 150px; /* Tamanho reduzido e controlado */
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto; /* Centralizado e com espaço inferior */
+  border-radius: 10px;
+}
+
+.text-center {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Grid de Serviços */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+  text-align: left; /* Texto dentro dos cards alinhado à esquerda */
+}
+
+.card {
+  background-color: var(--bg-light);
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  border-top: 4px solid var(--secondary-color);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+/* Botão CTA */
+.cta-button {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: #111;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  margin-top: 30px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  background-color: #e6c800;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+/* ==========================================================================
+   Seção: Em Construção (Apresentação de Dados)
+   ========================================================================== */
+.em-construcao-card {
+  background-color: var(--bg-light);
+  border: 2px dashed #ccc; /* Borda tracejada para dar ideia de obra/construção */
+  border-radius: 12px;
+  padding: 40px 20px;
+  margin: 0 auto 30px auto;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+  transition: all 0.3s ease;
+}
+
+.em-construcao-card:hover {
+  border-color: var(--accent-color); /* Fica amarelo quando passa o mouse */
+  background-color: #fffaf0; /* Fundo levemente amarelado */
+}
+
+.construcao-icon {
+  font-size: 3.5rem;
+  color: var(--accent-color); /* Ícone amarelo de alerta/obra */
+  margin-bottom: 20px;
+}
+
+.em-construcao-card h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.em-construcao-card p {
+  color: #555;
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   4. Rodapé (Footer)
+   ========================================================================== */
+footer {
+  background-color: #111;
+  color: #e0e0e0;
+  padding: 60px 20px 0 20px;
+  font-family: sans-serif; /* Usando sans-serif padrão para garantir leitura */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  font-family: serif; /* Mantido serif para os títulos do footer */
+  font-size: 1.5em;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--ciano);
+}
+
+.footer-section p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.footer-contato i {
+  margin-right: 12px;
+  color: var(--ciano);
+  width: 20px;
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 2.2em;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--ciano-claro);
+  transform: translateY(-4px);
+}
+
+.footer-bottom {
+  background-color: #000;
+  text-align: center;
+  padding: 25px 20px;
+  margin-top: 50px;
+  border-top: 1px solid #333;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%); /* Força o fundo preto a ocupar toda a largura da tela */
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #aaa;
+  text-align: center;
+}
+
+/* ==========================================================================
+   5. Responsividade (Mobile)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Header Mobile */
+  header {
+    padding: 20px 10px;
+  }
+  
+  .header-title-container {
+    flex-direction: column; /* Logo acima do título no mobile */
+    gap: 5px;
+  }
+  
+  .header-logo-img {
+    width: 50px;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+  
+  .header-description {
+    font-size: 1.1em;
+  }
+
+  nav a {
+    font-size: 1em;
+    padding: 8px 15px;
+  }
+  
+  /* Conteúdo Mobile */
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .image-coelho {
+    max-width: 100px;
+  }
+
+  /* Footer Mobile */
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section p {
+    text-align: center;
+  }
+
+  .footer-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .social-icons {
+    justify-content: center;
+  }
+}
