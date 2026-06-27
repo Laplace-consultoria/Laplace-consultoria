@@ -11,7 +11,7 @@
   --text-color: #333;
   --bg-light: #f4f7f6;
   
-  /* Cores da Laplace (Mantidas para referência) */
+  /* Cores da Laplace */
   --verde-claro: #006d5d;
   --verde-escuro: #00494b;
   --ciano: #1fbbb1;
@@ -46,17 +46,15 @@ header {
   gap: 20px;
 }
 
-/* Task: Colocar a logo perto do título */
 .header-title-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px; /* Espaço entre a logo e o texto */
+  gap: 15px;
 }
 
-/* Estilo para a imagem do logotipo da Laplace no header */
 .header-logo-img {
-  width: 80px; /* Tamanho ajustado para ficar harmônico com o título */
+  width: 80px;
   height: auto;
 }
 
@@ -67,9 +65,8 @@ header h1 {
   font-size: 2.8em;
 }
 
-/* Task: Aumentar a descrição debaixo do título */
 .header-description {
-  font-size: 1.4em; /* Aumentado conforme solicitado */
+  font-size: 1.4em;
   font-weight: 300;
   max-width: 800px;
   margin: 0 auto;
@@ -82,7 +79,7 @@ nav {
   flex-wrap: wrap;
   column-gap: 5px;
   width: 100%;
-  max-width: 800px; /* Limitador para não espalhar demais em telas grandes */
+  max-width: 800px;
 }
 
 nav a {
@@ -110,14 +107,14 @@ nav a:hover {
    3. Conteúdo Principal (.container)
    ========================================================================== */
 .container {
-  max-width: 1100px;
+  max-width: 1300px; /* Otimizado: Largura expandida para melhor visualização do Dashboard */
   margin: 0 auto;
   padding: 40px 20px;
 }
 
 section {
   margin-bottom: 60px;
-  text-align: center; /* Centraliza conteúdo padrão das seções */
+  text-align: center;
 }
 
 .section-title {
@@ -125,7 +122,7 @@ section {
   font-size: 2rem;
   margin-bottom: 30px;
   position: relative;
-  display: inline-block; /* Para o underline funcionar centralizado */
+  display: inline-block;
 }
 
 .section-title::after {
@@ -137,12 +134,11 @@ section {
   margin: 10px auto 0;
 }
 
-/* Task: Diminuir o tamanho do coelho */
 .image-coelho {
-  max-width: 150px; /* Tamanho reduzido e controlado */
+  max-width: 150px;
   height: auto;
   display: block;
-  margin: 0 auto 20px auto; /* Centralizado e com espaço inferior */
+  margin: 0 auto 20px auto;
   border-radius: 10px;
 }
 
@@ -151,13 +147,34 @@ section {
   font-size: 1.1rem;
 }
 
+/* ==========================================================================
+   Seção Dinâmica: Container do Dashboard (Iframe Wrapper)
+   ========================================================================== */
+.dashboard-wrapper {
+  width: 100%;
+  max-width: 1260px; /* Alinhamento estrito com as margens internas do container */
+  margin: 0 auto 30px auto;
+  border-radius: 12px;
+  overflow: hidden; /* Garante que os cantos arredondados apareçam sobre o iframe */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra suave profissional */
+  background-color: #ffffff;
+  border: 1px solid #e1e8ed;
+}
+
+.dashboard-wrapper iframe {
+  width: 100%;
+  height: 850px; /* Altura ideal de leitura para Desktop */
+  border: none;
+  display: block;
+}
+
 /* Grid de Serviços */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
   margin-top: 30px;
-  text-align: left; /* Texto dentro dos cards alinhado à esquerda */
+  text-align: left;
 }
 
 .card {
@@ -199,45 +216,6 @@ section {
   background-color: #e6c800;
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
-/* ==========================================================================
-   Seção: Em Construção (Apresentação de Dados)
-   ========================================================================== */
-.em-construcao-card {
-  background-color: var(--bg-light);
-  border: 2px dashed #ccc; /* Borda tracejada para dar ideia de obra/construção */
-  border-radius: 12px;
-  padding: 40px 20px;
-  margin: 0 auto 30px auto;
-  max-width: 800px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.02);
-  transition: all 0.3s ease;
-}
-
-.em-construcao-card:hover {
-  border-color: var(--accent-color); /* Fica amarelo quando passa o mouse */
-  background-color: #fffaf0; /* Fundo levemente amarelado */
-}
-
-.construcao-icon {
-  font-size: 3.5rem;
-  color: var(--accent-color); /* Ícone amarelo de alerta/obra */
-  margin-bottom: 20px;
-}
-
-.em-construcao-card h3 {
-  color: var(--primary-color);
-  font-size: 1.5rem;
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-
-.em-construcao-card p {
-  color: #555;
-  font-size: 1.1rem;
-  margin: 0;
-  line-height: 1.6;
-}
 
 /* ==========================================================================
    4. Rodapé (Footer)
@@ -246,7 +224,7 @@ footer {
   background-color: #111;
   color: #e0e0e0;
   padding: 60px 20px 0 20px;
-  font-family: sans-serif; /* Usando sans-serif padrão para garantir leitura */
+  font-family: sans-serif;
 }
 
 .footer-container {
@@ -264,7 +242,7 @@ footer {
 }
 
 .footer-section h3 {
-  font-family: serif; /* Mantido serif para os títulos do footer */
+  font-family: serif;
   font-size: 1.5em;
   color: #ffffff;
   margin-top: 0;
@@ -319,7 +297,7 @@ footer {
   margin-top: 50px;
   border-top: 1px solid #333;
   width: 100vw;
-  margin-left: calc(-50vw + 50%); /* Força o fundo preto a ocupar toda a largura da tela */
+  margin-left: calc(-50vw + 50%);
 }
 
 .footer-bottom p {
@@ -330,16 +308,31 @@ footer {
 }
 
 /* ==========================================================================
-   5. Responsividade (Mobile)
+   5. Responsividade (Dispositivos Móveis / Celulares)
    ========================================================================== */
 @media (max-width: 768px) {
+  /* Otimização de Espaço Mobile */
+  .container {
+    padding: 20px 10px; /* Reduz margens externas para aproveitar a tela do celular */
+  }
+
+  /* Redução de altura do Dashboard no celular para não trancar a rolagem do usuário */
+  .dashboard-wrapper {
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-wrapper iframe {
+    height: 550px; /* Altura compacta ideal para visualização em telas verticais */
+  }
+
   /* Header Mobile */
   header {
     padding: 20px 10px;
   }
   
   .header-title-container {
-    flex-direction: column; /* Logo acima do título no mobile */
+    flex-direction: column;
     gap: 5px;
   }
   
